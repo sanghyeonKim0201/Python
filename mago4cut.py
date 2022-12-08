@@ -102,6 +102,8 @@ def imageEvent2():
         backPath = "/home/pi/Desktop/Img/back2.png"
         cap()
         chromakey()
+def imageEvent3():
+    global btnFlag
     if btnFlag == True:
         btnFlag = False
         global backPath
@@ -268,16 +270,16 @@ def reset():
         imgLabels[i].configure(image=imsiImage)
         imgLabels[i].image = imsiImage
     txtbox.delete("1.0", "end")
-rbtns[0] = tk.Button(tool_bar, text="라벤더 색", bg="white", font=font, width = 11, height = 2, borderwidth=1, relief="solid", command = lambda: [imageEvent1(), cap(), chromakey()])
+rbtns[0] = tk.Button(tool_bar, text="라벤더 색", bg="white", font=font, width = 11, height = 2, borderwidth=1, relief="solid", command = imageEvent1)
 rbtns[0].grid(row=0, column=0, ipadx = 61)
 
-rbtns[1] = tk.Button(tool_bar, text="미니언즈", bg="white", font=font, width = 11, height = 2, borderwidth=1, relief="solid", command = lambda: [imageEvent2(), cap(), chromakey()])
+rbtns[1] = tk.Button(tool_bar, text="미니언즈", bg="white", font=font, width = 11, height = 2, borderwidth=1, relief="solid", command = imageEvent2)
 rbtns[1].grid(row=1, column=0, ipadx = 61)
 
-rbtns[2] = tk.Button(tool_bar, text="짱구", bg="white", font=font, width = 11, height = 2, borderwidth=1, relief="solid", command = lambda: [imageEvent3(), cap(), chromakey()])
+rbtns[2] = tk.Button(tool_bar, text="짱구", bg="white", font=font, width = 11, height = 2, borderwidth=1, relief="solid", command = imageEvent3)
 rbtns[2].grid(row=2, column=0, ipadx = 61)
 
-rbtns[3] = tk.Button(tool_bar, text="우리학교", bg="white", font=font, width = 11, height = 2, borderwidth=1, relief="solid", command = lambda: [imageEvent4(), cap(), chromakey()])
+rbtns[3] = tk.Button(tool_bar, text="우리학교", bg="white", font=font, width = 11, height = 2, borderwidth=1, relief="solid", command = imageEvent4)
 rbtns[3].grid(row=3, column=0, ipadx = 61)
 
 rbtns[4] = tk.Button(tool_bar, text="RESET", bg="white", font=font, width = 11, height = 2, borderwidth=1, relief="solid", command = reset)
